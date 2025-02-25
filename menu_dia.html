@@ -16,56 +16,54 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            position: relative; /* Para posicionar la imagen */
+            justify-content: flex-start; /* Cambié de center a flex-start para evitar que se amontonen los elementos */
+            position: relative;
             overflow-x: hidden; /* Evita el desplazamiento horizontal */
         }
         .content {
             text-align: center;
-            max-width: 90%; /* Reducido para que el contenido se ajuste al teléfono */
+            max-width: 100%; /* Cambié esto a 100% para que ocupe el 100% del ancho disponible */
             width: 100%;
             padding: 1rem;
-            margin-top: 5rem; /* Ajuste del margen superior */
+            margin-top: 8rem;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
         }
         .content h1 {
-            font-size: 2.5rem; /* Tamaño de fuente ajustado para móviles */
+            font-size: 2.5rem; /* Reducí el tamaño para ajustarlo mejor en pantallas pequeñas */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 1.5rem;
         }
         .content p {
-            font-size: 1.2rem; /* Tamaño de fuente ajustado para móviles */
+            font-size: 1.2rem; /* Ajusté el tamaño del texto */
             margin-bottom: 1.5rem;
         }
         .content ul {
-            list-style-type: none; /* Quita los puntos de la lista */
+            list-style-type: none;
             padding: 0;
-            text-align: left; /* Alinear el texto a la izquierda */
-            margin: 0 auto; /* Centrar la lista */
-            max-width: 100%; /* Asegura que no haya desplazamiento */
-            word-wrap: break-word; /* Permite que las palabras largas se ajusten */
+            text-align: left;
+            margin: 0 auto;
+            max-width: 100%; /* Permití que la lista ocupe todo el ancho disponible */
         }
         .content ul li {
-            font-size: 1.2rem; /* Tamaño de fuente ajustado para móviles */
-            margin-bottom: 1.5rem; /* Espacio entre elementos ajustado */
-            display: flex; /* Alinear nombre y precio en una línea */
-            align-items: center; /* Centrar verticalmente */
-            white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-            justify-content: center; /* Centra todo */
+            font-size: 1.3rem; /* Ajusté el tamaño de la fuente */
+            margin-bottom: 1.5rem; /* Reducí el espacio entre las filas */
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
         }
         .content ul li::before {
-            content: "♦"; /* Símbolo de diamante */
-            margin-right: 0.5rem; /* Espacio entre el símbolo y el nombre */
-            color: #FFD700; /* Color dorado para el símbolo */
+            content: "♦";
+            margin-right: 0.5rem;
+            color: #FFD700;
         }
         .content ul li span:first-child {
-            flex-grow: 1; /* Hace que el nombre ocupe el espacio disponible */
-            margin-right: 1rem; /* Espacio entre el nombre y el precio */
-            white-space: nowrap; /* Evitar que el nombre se divida en varias líneas */
+            flex-grow: 1;
+            margin-right: 1rem;
+            white-space: nowrap;
         }
         .content ul li span:last-child {
-            display: block; /* Hace que el precio esté debajo del nombre */
-            text-align: center; /* Centra el precio */
-            margin-top: 0.5rem; /* Espacio entre el nombre y el precio */
+            white-space: nowrap;
         }
         .content a {
             color: #FFD700;
@@ -74,8 +72,8 @@
             padding: 0.5rem 1rem;
             border-radius: 10px;
             transition: background 0.3s ease, color 0.3s ease;
-            margin-top: 2rem; /* Aumenté el margen superior para bajar el botón */
-            display: inline-block; /* Asegura que el margen se aplique correctamente */
+            margin-top: 2rem;
+            display: inline-block;
         }
         .content a:hover {
             background: #FFD700;
@@ -87,24 +85,11 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 150px; /* Ajuste del tamaño de la imagen para móviles */
+            width: 120px; /* Reduje el tamaño de la imagen */
         }
         .logo-corner img {
             width: 100%;
             height: auto;
-        }
-
-        /* Ajustes específicos para dispositivos móviles */
-        @media (max-width: 600px) {
-            .content h1 {
-                font-size: 2rem; /* Más pequeño en pantallas pequeñas */
-            }
-            .content p {
-                font-size: 1.1rem; /* Ajustar también el tamaño del texto */
-            }
-            .content ul li {
-                font-size: 1rem; /* Ajuste del tamaño del texto de los platos */
-            }
         }
     </style>
 </head>
