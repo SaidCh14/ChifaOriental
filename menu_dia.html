@@ -9,63 +9,58 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura */
             background: linear-gradient(to right, #3B1C1C, #000000);
             font-family: 'ZCOOL XiaoWei', serif;
             color: #FFD700;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Cambié de center a flex-start para evitar que se amontonen los elementos */
-            position: relative;
-            overflow-x: hidden; /* Evita el desplazamiento horizontal */
+            justify-content: center;
+            position: relative; /* Para posicionar la imagen */
         }
         .content {
             text-align: center;
-            max-width: 100%;
+            max-width: 800px;
             width: 100%;
             padding: 1rem;
-            margin-top: 8rem;
-            box-sizing: border-box;
+            margin-top: 8rem; /* Margen superior para el título */
         }
         .content h1 {
-            font-size: 2.5rem;
+            font-size: 3rem; /* Tamaño fijo para escritorio */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         .content p {
-            font-size: 1.2rem;
+            font-size: 1.5rem; /* Tamaño fijo para escritorio */
             margin-bottom: 1.5rem;
         }
         .content ul {
-            list-style-type: none;
+            list-style-type: none; /* Quita los puntos de la lista */
             padding: 0;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 100%;
+            text-align: left; /* Alinear el texto a la izquierda */
+            margin: 0 auto; /* Centrar la lista */
+            max-width: 600px; /* Ancho máximo para la lista */
         }
         .content ul li {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Asegura que el nombre y el precio se alineen correctamente */
-            white-space: nowrap;
-            flex-wrap: nowrap; /* Evita que el contenido se divida en varias líneas */
+            font-size: 1.5rem; /* Tamaño fijo para escritorio */
+            margin-bottom: 2rem; /* Espacio entre filas */
+            display: flex; /* Alinear nombre y precio en una línea */
+            align-items: center; /* Centrar verticalmente */
+            white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
         }
         .content ul li::before {
-            content: "♦";
-            margin-right: 0.5rem;
-            color: #FFD700;
-            flex-shrink: 0; /* Evita que el símbolo de diamante se mueva */
+            content: "♦"; /* Símbolo de diamante */
+            margin-right: 0.5rem; /* Espacio entre el símbolo y el nombre */
+            color: #FFD700; /* Color dorado para el símbolo */
         }
         .content ul li span:first-child {
-            flex-grow: 1;
-            margin-right: 1rem;
-            white-space: nowrap;
+            flex-grow: 1; /* Hace que el nombre ocupe el espacio disponible */
+            margin-right: 1rem; /* Espacio entre el nombre y el precio */
+            white-space: nowrap; /* Evitar que el nombre se divida en varias líneas */
         }
         .content ul li span:last-child {
-            white-space: nowrap;
+            white-space: nowrap; /* Evitar que el precio se divida en varias líneas */
         }
         .content a {
             color: #FFD700;
@@ -74,8 +69,8 @@
             padding: 0.5rem 1rem;
             border-radius: 10px;
             transition: background 0.3s ease, color 0.3s ease;
-            margin-top: 2rem;
-            display: inline-block;
+            margin-top: 2rem; /* Margen superior para el botón */
+            display: inline-block; /* Asegura que el margen se aplique correctamente */
         }
         .content a:hover {
             background: #FFD700;
@@ -87,11 +82,50 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 120px;
+            width: 180px; /* Tamaño más grande de la imagen */
         }
         .logo-corner img {
             width: 100%;
             height: auto;
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .content {
+                margin-top: 6rem; /* Menos margen superior en tablets */
+            }
+            .content h1 {
+                font-size: 2.5rem; /* Tamaño más pequeño para tablets */
+            }
+            .content p {
+                font-size: 1.2rem; /* Tamaño más pequeño para tablets */
+            }
+            .content ul li {
+                font-size: 1.2rem; /* Tamaño más pequeño para tablets */
+                margin-bottom: 1.5rem; /* Menos espacio entre filas */
+            }
+            .logo-corner {
+                width: 140px; /* Tamaño más pequeño para tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                margin-top: 4rem; /* Menos margen superior en móviles */
+            }
+            .content h1 {
+                font-size: 2rem; /* Tamaño más pequeño para móviles */
+            }
+            .content p {
+                font-size: 1rem; /* Tamaño más pequeño para móviles */
+            }
+            .content ul li {
+                font-size: 1rem; /* Tamaño más pequeño para móviles */
+                margin-bottom: 1rem; /* Menos espacio entre filas */
+            }
+            .logo-corner {
+                width: 120px; /* Tamaño más pequeño para móviles */
+            }
         }
     </style>
 </head>
