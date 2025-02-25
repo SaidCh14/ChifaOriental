@@ -9,22 +9,23 @@
         body {
             margin: 0;
             padding: 0;
-            min-height: 100vh; /* Asegura que el body ocupe toda la altura */
+            min-height: 100vh;
             background: linear-gradient(to right, #3B1C1C, #000000);
             font-family: 'ZCOOL XiaoWei', serif;
             color: #FFD700;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            position: relative; /* Para posicionar la imagen */
+            justify-content: flex-start; /* Mueve el contenido hacia arriba */
+            padding-top: 2rem; /* Ajusta la distancia desde arriba */
+            position: relative;
         }
         .menu {
             text-align: center;
-            max-width: 600px; /* Ancho máximo para el contenedor del menú */
+            max-width: 600px;
             width: 100%;
             padding: 1rem;
-            margin-top: 2rem; /* Ajuste del margen superior */
+            margin-top: 1rem; /* Reduce el margen superior */
         }
         .menu h1 {
             font-size: 3rem;
@@ -33,8 +34,8 @@
         }
         .menu-buttons {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-            gap: 1.5rem; /* Espacio entre los botones */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
         }
         .menu-buttons button {
             padding: 1rem;
@@ -51,57 +52,48 @@
             background: #FFD700;
             color: #3B1C1C;
         }
-
-        /* Estilo especial para el último botón (Menú del Día) */
         .menu-buttons .last-button {
-            grid-column: span 2; /* Ocupar ambas columnas */
-            width: 50%; /* Centrar el botón */
+            grid-column: span 2;
+            width: 50%;
             justify-self: center;
         }
-
-        /* Imagen en la esquina superior derecha */
         .logo-corner {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 180px; /* Tamaño más grande de la imagen */
+            width: 180px;
         }
         .logo-corner img {
             width: 100%;
             height: auto;
         }
-
-        /* Media queries para dispositivos móviles */
         @media (max-width: 768px) {
             .menu h1 {
                 font-size: 2.5rem;
             }
             .menu-buttons {
-                grid-template-columns: repeat(2, 1fr); /* Mantener dos columnas */
-                gap: 1rem; /* Espacio entre botones */
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
             .menu-buttons button {
                 font-size: 1.2rem;
                 padding: 0.8rem;
             }
             .menu-buttons .last-button {
-                grid-column: span 2; /* Ocupar ambas columnas */
-                width: 50%; /* Centrar el botón */
+                grid-column: span 2;
+                width: 50%;
                 justify-self: center;
             }
             .logo-corner {
-                width: 120px; /* Tamaño de logo ajustado */
+                width: 120px;
             }
         }
-
     </style>
 </head>
 <body>
-    <!-- Imagen en la esquina superior derecha -->
     <div class="logo-corner">
         <img src="marca_fondo.png" alt="Marca del restaurante">
     </div>
-
     <div class="menu">
         <h1>Nuestro Menú</h1>
         <div class="menu-buttons">
