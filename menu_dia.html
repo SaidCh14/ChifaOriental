@@ -48,7 +48,6 @@
             display: flex; /* Alinear nombre y precio en una línea */
             align-items: center; /* Centrar verticalmente */
             white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
-            flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
         }
         .content ul li::before {
             content: "♦"; /* Símbolo de diamante */
@@ -101,9 +100,6 @@
             .logo-corner {
                 width: 140px; /* Tamaño más pequeño para tablets */
             }
-            .content ul li {
-                margin-bottom: 1rem; /* Menos espacio entre los elementos */
-            }
         }
 
         @media (max-width: 480px) {
@@ -116,17 +112,12 @@
             .logo-corner {
                 width: 120px; /* Tamaño más pequeño para móviles */
             }
+            /* Ajustes para evitar que el nombre y el precio se solapen */
             .content ul li {
-                flex-direction: column; /* Apilar el nombre y el precio */
-                align-items: flex-start; /* Alineación a la izquierda */
-                margin-bottom: 1rem; /* Menos espacio entre los elementos */
+                flex-wrap: wrap; /* Permitir que los elementos se ajusten */
             }
             .content ul li span:first-child {
-                margin-right: 0; /* Eliminar el margen cuando se apilan */
-                margin-bottom: 0.5rem; /* Añadir espacio entre nombre y precio */
-            }
-            .content ul li span:last-child {
-                margin-top: 0.5rem; /* Separar el precio */
+                margin-right: 0; /* Eliminar el margen entre el nombre y el precio */
             }
         }
     </style>
