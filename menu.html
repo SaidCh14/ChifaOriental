@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura */
             background: linear-gradient(to right, #3B1C1C, #000000);
             font-family: 'ZCOOL XiaoWei', serif;
             color: #FFD700;
@@ -24,7 +24,7 @@
             max-width: 600px; /* Ancho máximo para el contenedor del menú */
             width: 100%;
             padding: 1rem;
-            margin-top: -4rem; /* Subir el título aún más */
+            margin-top: 2rem; /* Ajuste del margen superior */
         }
         .menu h1 {
             font-size: 3rem;
@@ -34,7 +34,7 @@
         .menu-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-            gap: 1.5rem; /* Más espacio entre los botones */
+            gap: 1.5rem; /* Espacio entre los botones */
         }
         .menu-buttons button {
             padding: 1rem;
@@ -86,15 +86,19 @@
         }
 
         @media (max-width: 480px) {
+            .menu {
+                margin-top: 4rem; /* Más espacio arriba en móviles */
+            }
             .menu h1 {
                 font-size: 2rem;
             }
             .menu-buttons {
                 grid-template-columns: 1fr; /* Una columna en móviles */
+                gap: 1rem; /* Menos espacio entre botones */
             }
             .menu-buttons button {
                 font-size: 1rem;
-                padding: 0.6rem;
+                padding: 0.8rem;
             }
             .menu-buttons .last-button {
                 width: 100%; /* Ancho completo en móviles */
