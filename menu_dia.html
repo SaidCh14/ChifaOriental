@@ -48,6 +48,7 @@
             display: flex; /* Alinear nombre y precio en una línea */
             align-items: center; /* Centrar verticalmente */
             white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+            justify-content: center; /* Centra todo */
         }
         .content ul li::before {
             content: "♦"; /* Símbolo de diamante */
@@ -60,7 +61,9 @@
             white-space: nowrap; /* Evitar que el nombre se divida en varias líneas */
         }
         .content ul li span:last-child {
-            white-space: nowrap; /* Evitar que el precio se divida en varias líneas */
+            display: block; /* Hace que el precio esté debajo del nombre */
+            text-align: center; /* Centra el precio */
+            margin-top: 0.5rem; /* Espacio entre el nombre y el precio */
         }
         .content a {
             color: #FFD700;
