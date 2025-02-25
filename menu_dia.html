@@ -17,7 +17,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
+            position: relative; /* Para posicionar la imagen */
         }
         .content {
             text-align: center;
@@ -36,32 +36,32 @@
             margin-bottom: 1.5rem;
         }
         .content ul {
-            list-style-type: none;
+            list-style-type: none; /* Quita los puntos de la lista */
             padding: 0;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 600px;
+            text-align: left; /* Alinear el texto a la izquierda */
+            margin: 0 auto; /* Centrar la lista */
+            max-width: 600px; /* Aumenté el ancho para que quepan los nombres */
         }
         .content ul li {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
-            display: flex;
-            flex-wrap: wrap; /* Permite que los elementos se ajusten cuando sea necesario */
-            align-items: center;
-            justify-content: space-between;
+            margin-bottom: 2rem; /* Aumenté el espacio entre filas */
+            display: flex; /* Alinear nombre y precio en una línea */
+            align-items: center; /* Centrar verticalmente */
+            white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+            flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
         }
         .content ul li::before {
-            content: "♦";
-            margin-right: 0.5rem;
-            color: #FFD700;
+            content: "♦"; /* Símbolo de diamante */
+            margin-right: 0.5rem; /* Espacio entre el símbolo y el nombre */
+            color: #FFD700; /* Color dorado para el símbolo */
         }
         .content ul li span:first-child {
-            flex-grow: 1;
-            margin-right: 1rem;
-            word-wrap: break-word; /* Permite que el texto se ajuste si es largo */
+            flex-grow: 1; /* Hace que el nombre ocupe el espacio disponible */
+            margin-right: 1rem; /* Espacio entre el nombre y el precio */
+            white-space: nowrap; /* Evitar que el nombre se divida en varias líneas */
         }
         .content ul li span:last-child {
-            white-space: nowrap;
+            white-space: nowrap; /* Evitar que el precio se divida en varias líneas */
         }
         .content a {
             color: #FFD700;
@@ -70,25 +70,27 @@
             padding: 0.5rem 1rem;
             border-radius: 10px;
             transition: background 0.3s ease, color 0.3s ease;
-            margin-top: 2rem;
-            display: inline-block;
+            margin-top: 2rem; /* Aumenté el margen superior para bajar el botón */
+            display: inline-block; /* Asegura que el margen se aplique correctamente */
         }
         .content a:hover {
             background: #FFD700;
             color: #3B1C1C;
         }
 
+        /* Imagen en la esquina superior derecha */
         .logo-corner {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 180px;
+            width: 180px; /* Tamaño más grande de la imagen */
         }
         .logo-corner img {
             width: 100%;
             height: auto;
         }
 
+        /* Media queries para dispositivos móviles */
         @media (max-width: 768px) {
             .content h1 {
                 font-size: 2.5rem;
@@ -97,7 +99,10 @@
                 font-size: 1.2rem;
             }
             .logo-corner {
-                width: 140px;
+                width: 140px; /* Tamaño más pequeño para tablets */
+            }
+            .content ul li {
+                margin-bottom: 1rem; /* Menos espacio entre los elementos */
             }
         }
 
@@ -109,12 +114,25 @@
                 font-size: 1rem;
             }
             .logo-corner {
-                width: 120px;
+                width: 120px; /* Tamaño más pequeño para móviles */
+            }
+            .content ul li {
+                flex-direction: column; /* Apilar el nombre y el precio */
+                align-items: flex-start; /* Alineación a la izquierda */
+                margin-bottom: 1rem; /* Menos espacio entre los elementos */
+            }
+            .content ul li span:first-child {
+                margin-right: 0; /* Eliminar el margen cuando se apilan */
+                margin-bottom: 0.5rem; /* Añadir espacio entre nombre y precio */
+            }
+            .content ul li span:last-child {
+                margin-top: 0.5rem; /* Separar el precio */
             }
         }
     </style>
 </head>
 <body>
+    <!-- Imagen en la esquina superior derecha -->
     <div class="logo-corner">
         <img src="marca_fondo.png" alt="Marca del restaurante">
     </div>
