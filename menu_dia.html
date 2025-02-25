@@ -18,21 +18,22 @@
             align-items: center;
             justify-content: center;
             position: relative; /* Para posicionar la imagen */
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
         }
         .content {
             text-align: center;
-            max-width: 800px;
+            max-width: 90%; /* Reducido para que el contenido se ajuste al teléfono */
             width: 100%;
             padding: 1rem;
-            margin-top: 8rem;
+            margin-top: 5rem; /* Ajuste del margen superior */
         }
         .content h1 {
-            font-size: 3rem; /* Tamaño fijo */
+            font-size: 2.5rem; /* Tamaño de fuente ajustado para móviles */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         .content p {
-            font-size: 1.5rem; /* Tamaño fijo */
+            font-size: 1.2rem; /* Tamaño de fuente ajustado para móviles */
             margin-bottom: 1.5rem;
         }
         .content ul {
@@ -40,11 +41,12 @@
             padding: 0;
             text-align: left; /* Alinear el texto a la izquierda */
             margin: 0 auto; /* Centrar la lista */
-            max-width: 600px; /* Aumenté el ancho para que quepan los nombres */
+            max-width: 100%; /* Asegura que no haya desplazamiento */
+            word-wrap: break-word; /* Permite que las palabras largas se ajusten */
         }
         .content ul li {
-            font-size: 1.5rem; /* Tamaño fijo */
-            margin-bottom: 2rem; /* Aumenté el espacio entre filas */
+            font-size: 1.2rem; /* Tamaño de fuente ajustado para móviles */
+            margin-bottom: 1.5rem; /* Espacio entre elementos ajustado */
             display: flex; /* Alinear nombre y precio en una línea */
             align-items: center; /* Centrar verticalmente */
             white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
@@ -85,11 +87,24 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 180px; /* Tamaño más grande de la imagen */
+            width: 150px; /* Ajuste del tamaño de la imagen para móviles */
         }
         .logo-corner img {
             width: 100%;
             height: auto;
+        }
+
+        /* Ajustes específicos para dispositivos móviles */
+        @media (max-width: 600px) {
+            .content h1 {
+                font-size: 2rem; /* Más pequeño en pantallas pequeñas */
+            }
+            .content p {
+                font-size: 1.1rem; /* Ajustar también el tamaño del texto */
+            }
+            .content ul li {
+                font-size: 1rem; /* Ajuste del tamaño del texto de los platos */
+            }
         }
     </style>
 </head>
