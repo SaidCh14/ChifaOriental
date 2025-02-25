@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Menú - CHIFA ORIENTAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #3B1C1C, #000000);
+            font-family: 'ZCOOL XiaoWei', serif;
+            color: #FFD700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative; /* Para posicionar la imagen */
+        }
+        .menu {
+            text-align: center;
+            max-width: 600px; /* Ancho máximo para el contenedor del menú */
+            width: 100%;
+            padding: 1rem;
+            margin-top: -4rem; /* Subir el título aún más */
+        }
+        .menu h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+        }
+        .menu-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            gap: 1.5rem; /* Más espacio entre los botones */
+        }
+        .menu-buttons button {
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-family: 'ZCOOL XiaoWei', serif;
+            color: #FFD700;
+            background: transparent;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .menu-buttons button:hover {
+            background: #FFD700;
+            color: #3B1C1C;
+        }
+
+        /* Estilo especial para el último botón (Menú del Día) */
+        .menu-buttons .last-button {
+            grid-column: 1 / -1; /* Ocupa todas las columnas */
+            width: 50%; /* Mitad del ancho */
+            margin: 0 auto; /* Centrado */
+        }
+
+        /* Imagen en la esquina superior derecha */
+        .logo-corner {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 180px; /* Tamaño más grande de la imagen */
+        }
+        .logo-corner img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .menu h1 {
+                font-size: 2.5rem;
+            }
+            .menu-buttons button {
+                font-size: 1.2rem;
+                padding: 0.8rem;
+            }
+            .logo-corner {
+                width: 140px; /* Tamaño más pequeño para tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu h1 {
+                font-size: 2rem;
+            }
+            .menu-buttons {
+                grid-template-columns: 1fr; /* Una columna en móviles */
+            }
+            .menu-buttons button {
+                font-size: 1rem;
+                padding: 0.6rem;
+            }
+            .menu-buttons .last-button {
+                width: 100%; /* Ancho completo en móviles */
+            }
+            .logo-corner {
+                width: 120px; /* Tamaño más pequeño para móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Imagen en la esquina superior derecha -->
+    <div class="logo-corner">
+        <img src="Imagenes/marca_fondo.png" alt="Marca del restaurante">
+    </div>
+
+    <div class="menu">
+        <h1>Nuestro Menú</h1>
+        <div class="menu-buttons">
+            <button onclick="window.location.href='sopas.html'">Sopas</button>
+            <button onclick="window.location.href='arroz.html'">Arroz</button>
+            <button onclick="window.location.href='tallarines.html'">Tallarines</button>
+            <button onclick="window.location.href='gran_especiales.html'">Gran Especiales</button>
+            <button onclick="window.location.href='mariscos.html'">Mariscos</button>
+            <button onclick="window.location.href='pollo.html'">Pollo</button>
+            <button onclick="window.location.href='res.html'">Res</button>
+            <button onclick="window.location.href='medios_platos.html'">Medios Platos</button>
+            <button onclick="window.location.href='bebidas.html'">Bebidas</button>
+            <button onclick="window.location.href='extras.html'">Extras</button>
+            <button class="last-button" onclick="window.location.href='menu_dia.html'">Menú de la Casa</button>
+        </div>
+    </div>
+</body>
+</html>

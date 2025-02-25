@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHIFA ORIENTAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(to right, #3B1C1C, #000000);
+            font-family: 'ZCOOL XiaoWei', serif;
+            color: #FFD700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .logo {
+            text-align: center;
+            margin-top: 4rem; /* Aumenté aún más el margen superior para bajar todo */
+        }
+        .logo .chifa {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .logo .oriental {
+            font-size: 4rem;
+            letter-spacing: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative; /* Para posicionar los palillos */
+        }
+        .oriental .o {
+            position: relative;
+            display: inline-block;
+        }
+        .oriental .o::before,
+        .oriental .o::after {
+            content: '';
+            position: absolute;
+            background: #8B4513; /* Color marrón como palillos de madera */
+            width: 0.5rem; /* Grosor inicial de los palillos */
+            height: 4rem; /* Longitud de los palillos */
+            top: 30%; /* Posición más arriba dentro de la "O" */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 0.2rem; /* Bordes redondeados para un aspecto más natural */
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%); /* Forma cónica */
+        }
+        .oriental .o::before {
+            transform: translate(-55%, -40%) rotate(30deg); /* Primer palillo con ángulo más suave */
+        }
+        .oriental .o::after {
+            transform: translate(-45%, -60%) rotate(-30deg); /* Segundo palillo con ángulo más suave */
+        }
+        .logo img {
+            max-width: 100%; /* La imagen no excederá el ancho de su contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1.5rem; /* Espacio entre el texto y la imagen */
+            width: 400px; /* Tamaño más grande para computadoras */
+            display: block; /* Asegura que la imagen esté centrada */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-ver-menu {
+            margin-top: 2rem; /* Espacio entre la imagen y el botón */
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-family: 'ZCOOL XiaoWei', serif;
+            color: #FFD700;
+            background: transparent;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .btn-ver-menu:hover {
+            background: #FFD700;
+            color: #3B1C1C;
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .logo .chifa {
+                font-size: 2rem;
+                letter-spacing: 0.3rem;
+            }
+            .logo .oriental {
+                font-size: 3rem;
+                letter-spacing: 0.3rem;
+            }
+            .oriental .o::before,
+            .oriental .o::after {
+                height: 3rem; /* Ajustar tamaño de los palillos en móviles */
+            }
+            .logo img {
+                width: 300px; /* Tamaño más pequeño para tablets */
+            }
+            .btn-ver-menu {
+                font-size: 1.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo .chifa {
+                font-size: 1.5rem;
+                letter-spacing: 0.2rem;
+            }
+            .logo .oriental {
+                font-size: 2.5rem;
+                letter-spacing: 0.2rem;
+            }
+            .oriental .o::before,
+            .oriental .o::after {
+                height: 2.5rem; /* Ajustar tamaño de los palillos en pantallas pequeñas */
+            }
+            .logo img {
+                width: 250px; /* Tamaño más pequeño para móviles */
+            }
+            .btn-ver-menu {
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <span class="chifa">CHIFA</span>
+        <span class="oriental">
+            <span class="o">O</span>riental
+        </span>
+        <!-- Aquí agregamos la imagen PNG con fondo transparente -->
+        <img src="Imagenes/marca_fondo.png" alt="Marca del restaurante">
+        <!-- Botón "Ver Menú" -->
+        <button class="btn-ver-menu" onclick="window.location.href='menu.html'">Ver Menú</button>
+    </div>
+</body>
+</html>
