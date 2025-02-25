@@ -18,6 +18,7 @@
             align-items: center;
             justify-content: center;
             position: relative; /* Para posicionar la imagen */
+            padding-top: 9rem; /* Para evitar que la imagen se sobreponga al título */
         }
         .content {
             text-align: center;
@@ -73,12 +74,13 @@
             color: #3B1C1C;
         }
 
-        /* Imagen en la esquina superior derecha */
+        /* Imagen centrada en la parte superior */
         .logo-corner {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 180px; /* Tamaño más grande de la imagen */
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
         }
         .logo-corner img {
             width: 100%;
@@ -112,7 +114,6 @@
     </style>
 </head>
 <body>
-    <!-- Imagen en la esquina superior derecha -->
     <div class="logo-corner">
         <img src="marca_fondo.png" alt="Marca del restaurante">
     </div>

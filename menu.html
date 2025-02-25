@@ -17,7 +17,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 14vh; /* Bajado un poco más el contenido */
+            padding-top: 22vh; /* Aumentado más el padding para bajar el contenido */
             position: relative;
         }
         .menu {
@@ -29,7 +29,7 @@
         .menu h1 {
             font-size: 3rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem; /* Aumentado margen inferior para dar más espacio */
         }
         .menu-buttons {
             display: grid;
@@ -58,8 +58,9 @@
         }
         .logo-corner {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 2rem; /* Se agrega un espacio arriba para evitar que se sobreponga con el título */
+            left: 50%;
+            transform: translateX(-50%); /* Centra la imagen horizontalmente */
             width: 180px;
         }
         .logo-corner img {
