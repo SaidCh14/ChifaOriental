@@ -17,7 +17,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 22vh; /* Aumentado más el padding para bajar el contenido */
+            padding-top: 22vh;
             position: relative;
         }
         .menu {
@@ -29,12 +29,13 @@
         .menu h1 {
             font-size: 3rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 3rem; /* Aumentado margen inferior para dar más espacio */
+            margin-bottom: 3rem;
         }
         .menu-buttons {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
+            grid-auto-rows: minmax(150px, auto);
         }
         .menu-buttons button {
             padding: 1rem;
@@ -46,26 +47,56 @@
             border-radius: 10px;
             cursor: pointer;
             transition: background 0.3s ease, color 0.3s ease;
+            width: 100%;
         }
         .menu-buttons button:hover {
             background: #FFD700;
             color: #3B1C1C;
         }
-        .menu-buttons .last-button {
+        .menu-buttons .last-button-container {
             grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .menu-buttons .last-button {
             width: 50%;
-            justify-self: center;
         }
         .logo-corner {
             position: absolute;
-            top: 2rem; /* Se agrega un espacio arriba para evitar que se sobreponga con el título */
+            top: 2rem;
             left: 50%;
-            transform: translateX(-50%); /* Centra la imagen horizontalmente */
+            transform: translateX(-50%);
             width: 180px;
         }
         .logo-corner img {
             width: 100%;
             height: auto;
+        }
+        .sopa-container, .arroz-container, .tallarin-container, .gran_especiales-container, .mariscos-container, .pollo-container, .res-container, .medios-container, .bebidas-container, .extras-container, .menu_dia-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sopa-image, .arroz-image, .tallarin-image, .Gespec-image, .Marisc-image, .pollo-image, .Res-image, .bebidas-image, .extras-image {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .extras-image {
+            width: 98px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .mencasa-image {
+            width: 200px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .Mplatos-image {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1rem;
         }
         @media (max-width: 768px) {
             .menu h1 {
@@ -80,9 +111,7 @@
                 padding: 0.8rem;
             }
             .menu-buttons .last-button {
-                grid-column: span 2;
                 width: 50%;
-                justify-self: center;
             }
             .logo-corner {
                 width: 120px;
@@ -98,17 +127,50 @@
     <div class="menu">
         <h1>Nuestro Menú</h1>
         <div class="menu-buttons">
-            <button onclick="window.location.href='sopas.html'">Sopas</button>
-            <button onclick="window.location.href='arroz.html'">Arroz</button>
-            <button onclick="window.location.href='tallarines.html'">Tallarines</button>
-            <button onclick="window.location.href='gran_especiales.html'">Gran Especiales</button>
-            <button onclick="window.location.href='mariscos.html'">Mariscos</button>
-            <button onclick="window.location.href='pollo.html'">Pollo</button>
-            <button onclick="window.location.href='res.html'">Res</button>
-            <button onclick="window.location.href='medios_platos.html'">Medios Platos</button>
-            <button onclick="window.location.href='bebidas.html'">Bebidas</button>
-            <button onclick="window.location.href='extras.html'">Extras</button>
-            <button class="last-button" onclick="window.location.href='menu_dia.html'">Menú de la Casa</button>
+            <div class="sopa-container">
+                <img src="SopaM.jpg" alt="Sopa" class="sopa-image">
+                <button onclick="window.location.href='sopas.html'">Sopas</button>
+            </div>
+            <div class="arroz-container">
+                <img src="Arroz.jpg" alt="Arroz" class="arroz-image">
+                <button onclick="window.location.href='arroz.html'">Arroz</button>
+            </div>
+            <div class="tallarines-container">
+                <img src="Tallarin.png" alt="Tallarin" class="tallarin-image">
+                <button onclick="window.location.href='tallarines.html'">Tallarines</button>
+            </div>
+            <div class="gran_especiales-container">
+                <img src="Gespec.jpg" alt="Gran Especiales" class="Gespec-image">
+                <button onclick="window.location.href='gran_especiales.html'">Gran Especiales</button>
+            </div>
+            <div class="mariscos-container">
+                <img src="Marisc.png" alt="Mariscos" class="Marisc-image">
+                <button onclick="window.location.href='mariscos.html'">Mariscos</button>
+            </div>
+            <div class="pollo-container">
+                <img src="pollo.png" alt="Pollo" class="pollo-image">
+                <button onclick="window.location.href='pollo.html'">Pollo</button>
+            </div>
+            <div class="res-container">
+                <img src="Res.png" alt="Res" class="Res-image">
+                <button onclick="window.location.href='res.html'">Res</button>
+            </div>
+            <div class="medios-container">
+                <img src="Mplatos.jpg" alt="Medios Platos" class="Mplatos-image">
+                <button onclick="window.location.href='medios_platos.html'">Medios Platos</button>
+            </div>
+            <div class="bebidas-container">
+                <img src="bebidas.png" alt="Bebidas" class="bebidas-image">
+                <button onclick="window.location.href='bebidas.html'">Bebidas</button>
+            </div>
+            <div class="extras-container">
+                <img src="extras.png" alt="Extras" class="extras-image">
+                <button onclick="window.location.href='extras.html'">Extras</button>
+            </div>
+            <div class="menu_dia-container last-button-container">
+                <img src="mencasa.png" alt="Menú de la Casa" class="mencasa-image">
+                <button class="last-button" onclick="window.location.href='menu_dia.html'">Menú de la Casa</button>
+            </div>
         </div>
     </div>
 </body>
